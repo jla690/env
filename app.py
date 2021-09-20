@@ -41,6 +41,7 @@ def delete(id):
         return redirect('/')
     except:
         return "Error deleting"
+    
 
 @app.route('/update/<int:id>', methods=['POST', 'GET'])
 def update(id):
