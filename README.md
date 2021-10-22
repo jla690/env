@@ -1,5 +1,6 @@
 # Flask Page
-Website that can be used for cataloguing items like a store would. Created in Python using Flask, HTML, CSS, and SQLite database for storing queries.
+Website that can be used for cataloguing items like a store would. Created in Python using Flask, HTML, CSS, and SQLite database for storing queries. Added Dockerfile for
+containerizing the project.
 
 Main Page:
 ![image](https://user-images.githubusercontent.com/56463342/134216623-5dfb9e72-0b84-4fba-b9b9-77becd163ff6.png)
