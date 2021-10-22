@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>
+    Add tasks
+</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">
+        Item Manager
+    </h1>
+    {% if tasks|length < 1 %}
+    <h4 style="text-align: center">
+        No Items found
+    </h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Added</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>
+                {{ task.content }}
+            </td>
+            <td>
+                {{ task.date_created.date() }}
+            </td>
+            <td>
+                {{task.quantity}}
+            </td>
+            <td>
+                <a href="/delete/{{task.id}}">Delete</a>
+                <br>
+                <a href="/update/{{task.id}}">Update</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    <form action="/" method="POST">
+        <input type="text" name="content" id="content" placeholder="Item Name">
+        <input type="number" name="quantity" id="quantity" placeholder="Quantity">
+        <input type="submit" value="Add Item">
+    </form>
+</div>
+{% endblock %}
